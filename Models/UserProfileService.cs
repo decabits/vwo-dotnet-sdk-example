@@ -34,24 +34,24 @@ namespace VWOSdk.DemoApp
             catch { }
         }
 
-        public UserProfileMap Lookup(string userId, string campaignTestKey)
+        public UserProfileMap Lookup(string userId, string CampaignKey)
         {
             string variationName = null;
-            if (_userProfileMap.TryGetValue(campaignTestKey, out ConcurrentDictionary<string, string> userMap))
+            if (_userProfileMap.TryGetValue(CampaignKey, out ConcurrentDictionary<string, string> userMap))
                 userMap.TryGetValue(userId, out variationName);
 
             if (string.IsNullOrEmpty(variationName) == false)
-                return new UserProfileMap(userId, campaignTestKey, variationName);
+                return new UserProfileMap(userId, CampaignKey, variationName);
 
             return null;
         }
 
         public void Save(UserProfileMap userProfileMap)
         {
-            if (_userProfileMap.TryGetValue(userProfileMap.CampaignTestKey, out ConcurrentDictionary<string, string> userMap) == false)
+            if (_userProfileMap.TryGetValue(userProfileMap.CampaignKey, out ConcurrentDictionary<string, string> userMap) == false)
             {
                 userMap = new ConcurrentDictionary<string, string>();
-                _userProfileMap[userProfileMap.CampaignTestKey] = userMap;
+                _userProfileMap[userProfileMap.CampaignKey] = userMap;
             }
             userMap[userProfileMap.UserId] = userProfileMap.VariationName;
             SaveAsync();

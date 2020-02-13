@@ -11,17 +11,17 @@ namespace VWOSdk.DemoApp.Models
 
         }
 
-        public ViewModel(Settings settingsFile, string userId, string campaignTestKey, string goalIdenfier, string activateResponse, string getVariationResponse, bool trackResponse, Dictionary<string, dynamic> customVariables)
+        public ViewModel(Settings settingsFile, string userId, string CampaignKey, string goalIdenfier, string activateResponse, string getVariationResponse, bool trackResponse, Dictionary<string, dynamic> customVariables)
         {
             this.UserId = userId;
             this.CurrentSettingsFile = settingsFile;
-            this.CampaignTestKey = campaignTestKey;
+            this.CampaignKey = CampaignKey;
             this.GoalIdentifier = goalIdenfier;
             this.Activate = activateResponse;
             this.GetVariation = getVariationResponse;
             this.CustomVariables = customVariables;
             this.Track = trackResponse;
-            this.Changes = GetSha256Hash(SHA256.Create(), this.CampaignTestKey + this.GetVariation);
+            this.Changes = GetSha256Hash(SHA256.Create(), this.CampaignKey + this.GetVariation);
         }
 
         // For Push Api
@@ -35,23 +35,23 @@ namespace VWOSdk.DemoApp.Models
         }
 
         // For Feature Rollout
-        public ViewModel(Settings settingsFile, string userId, string campaignTestKey, string campaignType, bool activateResponse, Dictionary<string, dynamic> customVariables)
+        public ViewModel(Settings settingsFile, string userId, string CampaignKey, string campaignType, bool activateResponse, Dictionary<string, dynamic> customVariables)
         {
             this.UserId = userId;
             this.CurrentSettingsFile = settingsFile;
             this.PartOfCampaign = activateResponse;
-            this.CampaignTestKey = campaignTestKey;
+            this.CampaignKey = CampaignKey;
             this.CampaignType = campaignType;
             this.CustomVariables = customVariables;
         }
 
         // For Feature Test
-        public ViewModel(Settings settingsFile, string userId, string campaignTestKey, string goalIdenfier, string campaignType, bool activateResponse, Dictionary<string, dynamic> customVariables, dynamic stringVariable, dynamic integerVariable, dynamic booleanVariable, dynamic doubleVariable)
+        public ViewModel(Settings settingsFile, string userId, string CampaignKey, string goalIdenfier, string campaignType, bool activateResponse, Dictionary<string, dynamic> customVariables, dynamic stringVariable, dynamic integerVariable, dynamic booleanVariable, dynamic doubleVariable)
         {
             this.UserId = userId;
             this.CurrentSettingsFile = settingsFile;
             this.PartOfCampaign = activateResponse;
-            this.CampaignTestKey = campaignTestKey;
+            this.CampaignKey = CampaignKey;
             this.CampaignType = campaignType;
             this.CustomVariables = customVariables;
             this.StringVariable = stringVariable;
@@ -72,7 +72,7 @@ namespace VWOSdk.DemoApp.Models
 
         public string Changes { get; set; } = "57e0a2";
 
-        public string CampaignTestKey { get; set; }
+        public string CampaignKey { get; set; }
 
         public string CampaignType { get; set; }
 
