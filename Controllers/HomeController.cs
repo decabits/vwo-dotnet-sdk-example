@@ -29,7 +29,7 @@ namespace VWOSdk.DemoApp.Controllers
             VWO.Configure(LogLevel.DEBUG);
             VWO.Configure(new CustomLogger());
             SettingsFile = SettingsProvider.GetSettingsFile(VWOConfig.ABCampaignSettings.AccountId, VWOConfig.ABCampaignSettings.SdkKey);
-            VWOClient = VWO.CreateInstance(SettingsFile, isDevelopmentMode: false, userProfileService: new UserProfileService());
+            VWOClient = VWO.CreateInstance(SettingsFile, isDevelopmentMode: false, userStorageService: new UserStorageService());
         }
 
         [HttpGet]
