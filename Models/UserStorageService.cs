@@ -34,7 +34,7 @@ namespace VWOSdk.DemoApp
             catch { }
         }
 
-        public UserStorageMap Lookup(string userId, string CampaignKey)
+        public UserStorageMap Get(string userId, string CampaignKey)
         {
             string variationName = null;
             if (_userStorageMap.TryGetValue(CampaignKey, out ConcurrentDictionary<string, string> userMap))
@@ -46,7 +46,7 @@ namespace VWOSdk.DemoApp
             return null;
         }
 
-        public void Save(UserStorageMap userStorageMap)
+        public void Set(UserStorageMap userStorageMap)
         {
             if (_userStorageMap.TryGetValue(userStorageMap.CampaignKey, out ConcurrentDictionary<string, string> userMap) == false)
             {
