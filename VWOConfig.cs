@@ -10,6 +10,7 @@ namespace VWOSdk.DemoApp
             public static string CampaignKey = Defaults.CampaignKey;          ////Assign actual value;
             public static string GoalIdentifier = Defaults.GoalIdentifier;          ////Assign actual value;
             public static Dictionary<string, dynamic> CustomVariables = Defaults.CustomVariables;
+            public static Dictionary<string, dynamic> VariationTargettingVariable = Defaults.VariationTargettingVariable;
             public static Dictionary<string, dynamic> RevenueVariables = Defaults.RevenueVariables;
         }
 

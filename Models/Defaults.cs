@@ -13,5 +13,6 @@ namespace VWOSdk.DemoApp
             {"revenue_value", 10}
         };
         public readonly static Dictionary<string, dynamic> CustomVariables = new Dictionary<string, dynamic>{};
+        public readonly static Dictionary<string, dynamic> VariationTargettingVariable = new Dictionary<string, dynamic>{};
     }
 }
