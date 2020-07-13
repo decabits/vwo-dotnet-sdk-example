@@ -14,6 +14,12 @@ namespace VWOSdk.DemoApp
                 "revenueValue", 10
             },
             {
+                "shouldTrackReturningUser", false
+            },
+            {
+                "goalTypeToTrack", "ALL"
+            },
+            {
               "customVariables", new Dictionary<string, dynamic>()
               {
                   {

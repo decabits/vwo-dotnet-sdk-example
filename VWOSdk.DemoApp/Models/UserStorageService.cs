@@ -53,7 +53,7 @@ namespace VWOSdk.DemoApp
                 userMap = new ConcurrentDictionary<string, Dictionary<string, string>>();
                 _userStorageMap[userStorageMap.CampaignKey] = userMap;
             }
-            if (userMap[userStorageMap.UserId] != null && userStorageMap.GoalIdentifier != null ) {
+            if (userMap.ContainsKey(userStorageMap.UserId) && userMap[userStorageMap.UserId] != null && userStorageMap.GoalIdentifier != null ) {
                 userMap[userStorageMap.UserId]["GoalIdentifier"] = userStorageMap.GoalIdentifier;
             } else {
                 userMap[userStorageMap.UserId] = new Dictionary<string, string>() {
