@@ -55,6 +55,11 @@ namespace VWOSdk.DemoApp.Controllers
             {
                 activateResponse = VWOClient.Activate(CampaignKey, userId, options);
                 getVariationResponse = string.IsNullOrEmpty(activateResponse) ? activateResponse : VWOClient.GetVariationName(CampaignKey, userId, options);
+                // Track all campaigns -
+                // VWOClient.Track(userId, goalIdentifier, options);
+
+                // Track multiple campaigns -
+                // VWOClient.Track(new List<String>(){ CampaignKey, "Test2" }, userId, goalIdentifier, options);
                 trackResponse = string.IsNullOrEmpty(activateResponse) ? false : VWOClient.Track(CampaignKey, userId, goalIdentifier, options);
             }
             var json = new ViewModel(SettingsFile, userId, CampaignKey, goalIdentifier, activateResponse, getVariationResponse, trackResponse, options);
