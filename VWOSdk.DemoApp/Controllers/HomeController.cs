@@ -20,9 +20,7 @@ namespace VWOSdk.DemoApp.Controllers
                "Ashley", "Bill", "Chris", "Dominic", "Emma", "Faizan",
                 "Gimmy", "Harry", "Ian", "John", "King", "Lisa", "Mona", "Nina",
                 "Olivia", "Pete", "Queen", "Robert", "Sarah", "Tierra", "Una",
-                "Varun", "Will", "Xin", "You", "Zeba",
-                "Varun",  "You", "Faizan", "Ashley", "Bill", "Chris", "Dominic",
-                "Rohit" , "Bob"
+                "Will", "Xin", "You", "Zeba",
                };
 
         private static Settings SettingsFile { get; set; }
